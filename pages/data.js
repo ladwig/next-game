@@ -1,3 +1,5 @@
+import Settings from './settings.js'
+
 export default {
   player: ['Daniel',3],
   playerSpeed: [32],

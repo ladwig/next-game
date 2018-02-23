@@ -4,8 +4,9 @@ import Enemy from './enemymodel.js'
 import Settings from './settings.js'
 import data from './data.js'
 
-class Index extends React.Component {
+class Game extends React.Component {
   render() {
+
     //create enemies via random (10 enemies)
     const enemies = []
     let counter = 0
@@ -48,4 +49,4 @@ class Index extends React.Component {
   }
 }
 
-export default Index
+export default Game
