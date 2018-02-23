@@ -1,6 +1,7 @@
 import Player from './player.js'
 import Playermodel from './playermodel.js'
 import Enemy from './enemymodel.js'
+import Settings from '.settings.js'
 import data from './data.js'
 
 class Index extends React.Component {

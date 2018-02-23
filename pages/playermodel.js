@@ -11,17 +11,18 @@ class Playermodel extends React.Component {
 
     console.log(event)
 
-    switch (event.key) {
-      case 'ArrowRight':
+    switch (event.keyCode) {
+      case data.control[1]:
         this.moveBox('left', left, data.playerSpeed[0], 'plus')
         break
-      case 'ArrowDown':
+      case data.control[2]:
         this.moveBox('top', top, data.playerSpeed[0], 'plus')
         break
-      case 'ArrowLeft':
+      case data.control[3]:
         this.moveBox('left', left, data.playerSpeed[0], 'minus')
         break
-      case 'ArrowUp':
+        console.log(event)
+      case data.control[0]:
         this.moveBox('top', top, data.playerSpeed[0], 'minus')
         break
       default:
