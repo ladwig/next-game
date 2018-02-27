@@ -9,8 +9,6 @@ class Playermodel extends React.Component {
   onKeyDown = event => {
     const { top, left } = this.state
 
-    console.log(event)
-
     switch (event.keyCode) {
       case data.control[1]:
         this.moveBox('left', left, data.playerSpeed[0], 'plus')
@@ -60,6 +58,7 @@ class Playermodel extends React.Component {
     newState[position] = value
 
     this.setState(newState)
+    this.props.pushPosition(newState)
   }
 
   componentWillMount() {

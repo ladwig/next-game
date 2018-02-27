@@ -1,19 +1,23 @@
 import data from './data.js'
 
 class Enemy extends React.Component {
+
+  stop = false;
+
   constructor(props) {
     super(props)
-
     this.state = Object.assign({}, props.position)
     this.axis = Math.random() > 0.5 ? 'top' : 'left'
-
     this.direction = 'forwards'
   }
 
   move = () => {
+    if (this.stop) {
+     return
+    }
+
     const newState = {}
     const { axis, state, direction } = this
-
     newState[axis] = direction === 'forwards' ? state[axis] + 5 : state[axis] - 5
     this.setState(newState)
   }
@@ -21,6 +25,8 @@ class Enemy extends React.Component {
   componentDidMount() {
     this.move()
   }
+
+
 
   toggleDirection() {
     this.direction = this.direction === 'forwards' ? 'backwards' : 'forwards'
@@ -49,7 +55,6 @@ class Enemy extends React.Component {
     if (!this.inside()) {
       this.toggleDirection()
     }
-
     setTimeout(this.move, 20)
   }
 
